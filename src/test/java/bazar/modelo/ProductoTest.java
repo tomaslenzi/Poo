@@ -12,8 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import bazar.condicion.Condicion;
 import bazar.condicion.CondicionTieneCategoria;
-import modelo.ProdAbstracto;
-import modelo.Producto;
+
 
 public class ProductoTest {
 	

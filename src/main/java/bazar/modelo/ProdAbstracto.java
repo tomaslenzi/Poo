@@ -1,4 +1,4 @@
-package modelo;
+package bazar.modelo;
 
 import java.util.ArrayList;
 

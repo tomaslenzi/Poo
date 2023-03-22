@@ -1,10 +1,8 @@
-package bazar.combo;
+package bazar.modelo;
 
 import java.util.ArrayList;
 
 import bazar.condicion.Condicion;
-import modelo.ProdAbstracto;
-import modelo.Producto;
 
 public class Combo extends ProdAbstracto {
 	private double porcentajeDtoPorProducto;

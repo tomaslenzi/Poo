@@ -1,4 +1,4 @@
-package bazar.combo;
+package bazar.modelo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
@@ -11,8 +11,10 @@ import org.junit.jupiter.api.Test;
 import bazar.condicion.Condicion;
 import bazar.condicion.CondicionPrecioMenor;
 import bazar.condicion.CondicionTieneCategoria;
-import modelo.ProdAbstracto;
-import modelo.Producto;
+import bazar.modelo.Combo;
+import bazar.modelo.ProdAbstracto;
+import bazar.modelo.Producto;
+
 
 public class ComboTest {
 	

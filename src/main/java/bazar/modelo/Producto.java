@@ -1,17 +1,15 @@
-package modelo;
+package bazar.modelo;
 
 import java.util.ArrayList;
 
 import bazar.condicion.Condicion;
 
-public class Producto extends ProdAbstracto{
-	
+public class Producto extends ProdAbstracto {
+
 	private ArrayList<String> categorias;
 	private double precio;
 	private double peso;
-	
-	
-	
+
 	public Producto(String nombre, double precio, double peso) {
 		super(nombre);
 		this.categorias = new ArrayList<>();
@@ -20,7 +18,7 @@ public class Producto extends ProdAbstracto{
 	}
 
 	public void agregarCategoria(String cat) {
-		if(!categorias.contains(cat))
+		if (!categorias.contains(cat))
 			categorias.add(cat);
 	}
 
@@ -47,21 +45,21 @@ public class Producto extends ProdAbstracto{
 	@Override
 	public ArrayList<ProdAbstracto> buscar(Condicion f) {
 		ArrayList<ProdAbstracto> resultado = new ArrayList<>();
-		
-		if(f.cumple(this))
+
+		if (f.cumple(this))
 			resultado.add(this);
 		return resultado;
 	}
 
 	@Override
 	public ProdAbstracto copiar(Condicion f) {
-		if(f.cumple(this)) {
+		if (f.cumple(this)) {
 			Producto copia = new Producto(this.getNombre(), this.precio, this.peso);
-			for (String cat:categorias)
+			for (String cat : categorias)
 				copia.agregarCategoria(cat);
 			return copia;
 		}
-		
+
 		return null;
 	}
 
@@ -69,8 +67,5 @@ public class Producto extends ProdAbstracto{
 	public Producto productoMenorPeso() {
 		return this;
 	}
-	
-	
 
 }
-

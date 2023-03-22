@@ -1,6 +1,6 @@
 package bazar.condicion;
 
-import modelo.ProdAbstracto;
+import bazar.modelo.ProdAbstracto;
 
 public class CondicionAnd extends Condicion{
 	private Condicion c1,c2;
