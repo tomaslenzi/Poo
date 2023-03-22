@@ -1,4 +1,6 @@
-package bazar;
+package bazar.condicion;
+
+import modelo.ProdAbstracto;
 
 public class CondicionTieneCategoria extends Condicion{
 	private String cat;

@@ -1,4 +1,4 @@
-package bazar;
+package bazar.combo;
 
 public class ComboPromocional {
 

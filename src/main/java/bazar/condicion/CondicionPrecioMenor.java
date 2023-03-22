@@ -1,4 +1,6 @@
-package bazar;
+package bazar.condicion;
+
+import modelo.ProdAbstracto;
 
 public class CondicionPrecioMenor extends Condicion {
 	private double precioMaximo;

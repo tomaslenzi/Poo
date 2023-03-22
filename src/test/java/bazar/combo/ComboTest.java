@@ -1,12 +1,18 @@
-package bazar;
+package bazar.combo;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotSame;
 
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import bazar.condicion.Condicion;
+import bazar.condicion.CondicionPrecioMenor;
+import bazar.condicion.CondicionTieneCategoria;
+import modelo.ProdAbstracto;
+import modelo.Producto;
 
 public class ComboTest {
 	
@@ -101,10 +107,21 @@ public class ComboTest {
 	    combo.agregarElemento(p1);
 	    combo.agregarElemento(p2);
 	    
-	    Combo copia = (Combo) combo.copiar(precioMenor);// se copia el combo con una condición de precio 
-	    assertTrue(copia instanceof Combo);
+	    //se copia el combo
+	    ProdAbstracto comboCopia = combo.copiar(precioMenor);
+	    assertNotSame(combo, comboCopia);
 	    
-	    assertEquals(copia.getNombre(), "picos de decoracion");
+	    //verifica que los atributos del combo copiado son iguales a los del original
+	    assertEquals(combo.getNombre(), comboCopia.getNombre());
+	    assertEquals(combo.getPeso(),comboCopia.getPeso(),0.0001);
+	    assertEquals(combo.getPrecio(),comboCopia.getPrecio(),0.001);
+	    
+	    //assertEquals(combo.getElementos().size(),(combo) comboCopia.getElementos(.size());
+	    
+	    //Combo copia = (Combo) combo.copiar(precioMenor);// se copia el combo con una condiciï¿½n de precio 
+	    //assertTrue(copia instanceof Combo);
+	    
+	    //assertEquals(copia.getNombre(), "picos de decoracion");
 	}
 	
     @Test

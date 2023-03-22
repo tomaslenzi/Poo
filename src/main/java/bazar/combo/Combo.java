@@ -1,6 +1,10 @@
-package bazar;
+package bazar.combo;
 
 import java.util.ArrayList;
+
+import bazar.condicion.Condicion;
+import modelo.ProdAbstracto;
+import modelo.Producto;
 
 public class Combo extends ProdAbstracto {
 	private double porcentajeDtoPorProducto;
@@ -58,7 +62,7 @@ public class Combo extends ProdAbstracto {
 		return suma;
 	}
 	
-	protected double precioSinDescuento() {
+	public double precioSinDescuento() {
 		double precioTotal = 0.0;
 		for (ProdAbstracto elemento: elementos)
 			precioTotal+=elemento.getPrecio();
@@ -152,6 +156,9 @@ public class Combo extends ProdAbstracto {
 		}
 		return produtoMenorPeso;
 	}
+
+
+
 	
 	
 	

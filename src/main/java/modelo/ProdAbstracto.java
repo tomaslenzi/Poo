@@ -1,6 +1,8 @@
-package bazar;
+package modelo;
 
 import java.util.ArrayList;
+
+import bazar.condicion.Condicion;
 
 public abstract class ProdAbstracto {
 	private String nombre;

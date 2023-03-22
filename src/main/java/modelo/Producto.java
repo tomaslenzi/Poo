@@ -1,6 +1,8 @@
-package bazar;
+package modelo;
 
 import java.util.ArrayList;
+
+import bazar.condicion.Condicion;
 
 public class Producto extends ProdAbstracto{
 	

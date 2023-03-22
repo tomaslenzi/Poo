@@ -1,5 +1,10 @@
 package bazar;
 
+import bazar.combo.Combo;
+import bazar.condicion.Condicion;
+import bazar.condicion.CondicionPesoMenor;
+import modelo.Producto;
+
 public class Main {
 
 	public static void main(String[] args) {

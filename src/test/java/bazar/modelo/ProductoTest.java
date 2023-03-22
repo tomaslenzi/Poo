@@ -1,4 +1,4 @@
-package bazar;
+package bazar.modelo;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -9,6 +9,11 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import bazar.condicion.Condicion;
+import bazar.condicion.CondicionTieneCategoria;
+import modelo.ProdAbstracto;
+import modelo.Producto;
 
 public class ProductoTest {
 	
