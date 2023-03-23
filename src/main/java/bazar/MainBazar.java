@@ -7,7 +7,7 @@ import bazar.modelo.Combo;
 import bazar.modelo.Producto;
 ;
 
-public class Main {
+public class MainBazar {
 
 	public static void main(String[] args) {
 		
