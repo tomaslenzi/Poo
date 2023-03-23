@@ -1,6 +1,7 @@
 package bazar.modelo;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 import bazar.condicion.Condicion;
 
@@ -12,9 +13,11 @@ public abstract class ProdAbstracto {
 	}
 	public abstract double getPeso();
 	public abstract double getPrecio();
-	public abstract ArrayList<String> getCategorias();
+	public abstract Set<String> getCategorias();
+	
+	
 	public abstract int contarProductos();
-	public abstract ArrayList<ProdAbstracto> buscar(Condicion f);
+	public abstract List<ProdAbstracto> buscar(Condicion f);
 	public abstract ProdAbstracto copiar(Condicion f);
 	public abstract Producto productoMenorPeso();
 	
@@ -27,8 +30,6 @@ public abstract class ProdAbstracto {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
-
+		
 }
 

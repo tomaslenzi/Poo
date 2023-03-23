@@ -14,7 +14,10 @@ public class Main {
 		Producto p1 = new Producto("pico decorador liso", 150, 100);
 		Producto p2 = new Producto("pico decorador estrella", 170, 115);
 		Producto p3 = new Producto("pico decorador plano", 175, 120);
+		
 		Producto p4 = new Producto("manga pastelera", 200, 100);
+		
+		
 		
 		p1.agregarCategoria("pasteleria");
 		p2.agregarCategoria("pasteleria");
@@ -24,15 +27,15 @@ public class Main {
 		Condicion pesoMenor = new CondicionPesoMenor(1000);
 		
 		Combo c1 = new Combo("picos de decoracion",10,50,pesoMenor);
+		
 		Combo c2 = new Combo("combo decoracion basico", 10, 50, pesoMenor);
 		
 		c1.agregarElemento(p1);
 		c1.agregarElemento(p2);
 		c1.agregarElemento(p3);
 		
-		c2.agregarElemento(p1);
-		c2.agregarElemento(p2);
-		c2.agregarElemento(p3);
+
+		c2.agregarElemento(c1);
 		c2.agregarElemento(p4);
 		
 		

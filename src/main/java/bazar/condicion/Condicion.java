@@ -2,7 +2,7 @@ package bazar.condicion;
 
 import bazar.modelo.ProdAbstracto;
 
-public abstract class Condicion {
-	public abstract boolean cumple(ProdAbstracto elemento);
+public interface Condicion {
+	boolean cumple(ProdAbstracto elemento);
 
 }

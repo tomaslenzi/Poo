@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
-
+import java.util.Set;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +29,7 @@ public class ProductoTest {
 		p1.agregarCategoria("decoracion");
 		p1.agregarCategoria("decoracion");// se intenta agregar una misma categoria 2 veces
 		
-		ArrayList<String> categorias= p1.getCategorias();
+		Set<String> categorias= p1.getCategorias();
 		assertEquals(2, categorias.size());// se verifica que solo haya 2 categorias
 		assertTrue(categorias.contains("pasteleria"));//se verifica que la categoria pasteleria este agregada
 		assertTrue(categorias.contains("decoracion"));//se verifica que la categoria decoracion este agregada
@@ -52,7 +52,7 @@ public class ProductoTest {
 		p1.agregarCategoria("pasteleria");
 		p1.agregarCategoria("decoracion");
 		
-		ArrayList<String> categorias= p1.getCategorias();
+		Set<String> categorias= p1.getCategorias();
 		assertEquals(2, categorias.size());// se verifica que solo haya 2 categorias
 		assertTrue(categorias.contains("pasteleria"));//se verifica que la categoria pasteleria este agregada
 		assertTrue(categorias.contains("decoracion"));//se verifica que la categoria decoracion este agregada
@@ -81,17 +81,18 @@ public class ProductoTest {
 	@Test
 	public void copiarTest() { //se verifica que el metodo copiar devuelve una copia del producto con las mismas propiedades
 								//y con la condicion de que la categoria del producto a copiar sea en este caso pasteleria
+		//assertNotSame para verificar que no sea la mism
 
 		p1.agregarCategoria("pasteleria");
 		
 		String cat = "pasteleria";
 		Condicion categoria = new CondicionTieneCategoria(cat);
 		
-		ProdAbstracto resultado =p1.copiar(categoria);
+		ProdAbstracto copia = p1.copiar(categoria);
 		
-		assertNotNull(resultado);
-		
-		Producto copia =(Producto) resultado;
+		assertNotNull(copia);
+
+		assertTrue(p1!=copia);//se compara que no es la misma direccion de memoria
 		
 	    assertEquals(p1.getNombre(), copia.getNombre());
 	    assertEquals(p1.getPrecio(), copia.getPrecio(), 0.0);

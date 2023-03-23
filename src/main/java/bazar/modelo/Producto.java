@@ -1,18 +1,20 @@
 package bazar.modelo;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import bazar.condicion.Condicion;
 
 public class Producto extends ProdAbstracto {
 
-	private ArrayList<String> categorias;
+	private Set<String> categorias;
 	private double precio;
 	private double peso;
 
 	public Producto(String nombre, double precio, double peso) {
 		super(nombre);
-		this.categorias = new ArrayList<>();
+		this.categorias = new HashSet<>();
 		this.precio = precio;
 		this.peso = peso;
 	}
@@ -33,8 +35,8 @@ public class Producto extends ProdAbstracto {
 	}
 
 	@Override
-	public ArrayList<String> getCategorias() {
-		return new ArrayList<>(categorias);
+	public Set<String> getCategorias() {
+		return new HashSet<>(categorias);
 	}
 
 	@Override
