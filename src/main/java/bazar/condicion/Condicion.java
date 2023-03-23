@@ -1,8 +1,8 @@
 package bazar.condicion;
 
-import bazar.modelo.ProdAbstracto;
+import bazar.modelo.ElementoBazar;
 
 public interface Condicion {
-	boolean cumple(ProdAbstracto elemento);
+	boolean cumple(ElementoBazar elemento);
 
 }

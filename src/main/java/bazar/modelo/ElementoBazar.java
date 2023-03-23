@@ -5,10 +5,10 @@ import java.util.Set;
 
 import bazar.condicion.Condicion;
 
-public abstract class ProdAbstracto {
+public abstract class ElementoBazar {
 	private String nombre;
 	
-	public ProdAbstracto(String nombre) {
+	public ElementoBazar(String nombre) {
 		this.nombre = nombre;
 	}
 	public abstract double getPeso();
@@ -17,8 +17,8 @@ public abstract class ProdAbstracto {
 	
 	
 	public abstract int contarProductos();
-	public abstract List<ProdAbstracto> buscar(Condicion f);
-	public abstract ProdAbstracto copiar(Condicion f);
+	public abstract List<ElementoBazar> buscar(Condicion f);
+	public abstract ElementoBazar copiar(Condicion f);
 	public abstract Producto productoMenorPeso();
 	
 	public boolean tieneCategoria(String categoria) {

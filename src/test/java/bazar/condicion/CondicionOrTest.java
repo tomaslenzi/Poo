@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Test;
 
 import bazar.modelo.Producto;
 
-public class CondicionAndTest {
-
+public class CondicionOrTest {
+	
 	@Test
-	public void CondicionAndCumpleTest() {
-		Producto p1 = new Producto("pico decorador liso", 150, 100);
+	public void CondicionOrCumpleTest() {
+		Producto p1 = new Producto("pico decorador liso", 150, 10002);
 		Producto p2 = new Producto("pico decorador estrella", 170, 115);
 		
 		p1.agregarCategoria("pasta");
@@ -20,7 +20,7 @@ public class CondicionAndTest {
 		Condicion pesoMenor = new CondicionPesoMenor(1000);
 		Condicion categoria = new CondicionTieneCategoria("pasteleria");
 
-		Condicion compuesta = new CondicionAnd(pesoMenor, categoria);
+		Condicion compuesta = new CondicionOr(pesoMenor, categoria);
 
 		assertFalse(compuesta.cumple(p1));
 		assertTrue(compuesta.cumple(p2));

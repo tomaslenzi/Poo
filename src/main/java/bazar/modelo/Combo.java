@@ -7,10 +7,10 @@ import java.util.Set;
 
 import bazar.condicion.Condicion;
 
-public class Combo extends ProdAbstracto {
+public class Combo extends ElementoBazar {
 	private double porcentajeDtoPorProducto;
 	private double porcentajeMaxDto;
-	private List<ProdAbstracto> elementos;
+	private List<ElementoBazar> elementos;
 	private Condicion condicion;
 
 	public Combo(String nombre, double porcentajeDtoPorProducto, double porcentajeMaxDto, Condicion condicion) {
@@ -33,14 +33,14 @@ public class Combo extends ProdAbstracto {
 		this.condicion = condicion;
 	}
 
-	public void agregarElemento(ProdAbstracto elemnto) {
+	public void agregarElemento(ElementoBazar elemnto) {
 		if (condicion.cumple(elemnto))
 			elementos.add(elemnto);
 	}
 
-	public List<ProdAbstracto> getElementos() {
-		List<ProdAbstracto> copia = new ArrayList<>();
-		for (ProdAbstracto e : elementos) {
+	public List<ElementoBazar> getElementos() {
+		List<ElementoBazar> copia = new ArrayList<>();
+		for (ElementoBazar e : elementos) {
 			copia.add(e);
 		}
 
@@ -50,7 +50,7 @@ public class Combo extends ProdAbstracto {
 	@Override
 	public double getPeso() {
 		double suma = 0;
-		for (ProdAbstracto elemento : elementos) {
+		for (ElementoBazar elemento : elementos) {
 			suma += elemento.getPeso();
 		}
 		return suma;
@@ -58,7 +58,7 @@ public class Combo extends ProdAbstracto {
 
 	public double precioSinDescuento() {
 		double precioTotal = 0.0;
-		for (ProdAbstracto elemento : elementos) {
+		for (ElementoBazar elemento : elementos) {
 			precioTotal += elemento.getPrecio();
 		}
 		return precioTotal;
@@ -78,7 +78,7 @@ public class Combo extends ProdAbstracto {
 	@Override
 	public Set<String> getCategorias() {
 		Set<String> categorias = new HashSet<>();
-		for (ProdAbstracto elemento : elementos) {
+		for (ElementoBazar elemento : elementos) {
 			Set<String> catElem = elemento.getCategorias();
 			categorias.addAll(catElem);
 		}
@@ -88,19 +88,19 @@ public class Combo extends ProdAbstracto {
 	@Override
 	public int contarProductos() {
 		int total = 0;
-		for (ProdAbstracto elemento : elementos) {
+		for (ElementoBazar elemento : elementos) {
 			total += elemento.contarProductos();
 		}
 		return total;
 	}
 
 	@Override
-	public List<ProdAbstracto> buscar(Condicion f) {
-		List<ProdAbstracto> resultado = new ArrayList<>();
+	public List<ElementoBazar> buscar(Condicion f) {
+		List<ElementoBazar> resultado = new ArrayList<>();
 		if (f.cumple(this)) {
 			resultado.add(this);
 		} else {
-			for (ProdAbstracto elemento : elementos) {
+			for (ElementoBazar elemento : elementos) {
 				resultado.addAll(elemento.buscar(f));
 			}
 		}
@@ -108,11 +108,11 @@ public class Combo extends ProdAbstracto {
 	}
 
 	@Override
-	public ProdAbstracto copiar(Condicion f) {
+	public ElementoBazar copiar(Condicion f) {
 		if (f.cumple(this)) {
 			Combo copiaCombo = new Combo(this.getNombre(), porcentajeDtoPorProducto, porcentajeMaxDto, condicion);
-			for (ProdAbstracto elemento : elementos) {
-				ProdAbstracto copia = elemento.copiar(f);
+			for (ElementoBazar elemento : elementos) {
+				ElementoBazar copia = elemento.copiar(f);
 				if (copia != null)
 					copiaCombo.agregarElemento(copia);
 			}
@@ -126,7 +126,7 @@ public class Combo extends ProdAbstracto {
 	public Producto productoMenorPeso() {
 		double menorPeso = Double.MAX_VALUE;
 		Producto productoMenorPeso = null;
-		for (ProdAbstracto elemento : elementos) {
+		for (ElementoBazar elemento : elementos) {
 			Producto productoMenorPesoAux = elemento.productoMenorPeso();
 			double temp = productoMenorPesoAux.getPeso();
 			if (productoMenorPeso == null || temp < menorPeso) {
@@ -136,5 +136,13 @@ public class Combo extends ProdAbstracto {
 		}
 		return productoMenorPeso;
 	}
+
+	@Override
+	public String toString() {
+		return "Combo [porcentajeDtoPorProducto=" + porcentajeDtoPorProducto + ", porcentajeMaxDto=" + porcentajeMaxDto
+				+ ", elementos=" + elementos + ", condicion=" + condicion + "]";
+	}
+	
+	
 
 }

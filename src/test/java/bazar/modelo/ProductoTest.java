@@ -67,7 +67,7 @@ public class ProductoTest {
 		p1.agregarCategoria("pasteleria");
 		p1.agregarCategoria("decoracion");
 	
-		ArrayList<ProdAbstracto> resultado = new ArrayList<>();
+		ArrayList<ElementoBazar> resultado = new ArrayList<>();
 		resultado.add(p1);
 		
 		String cat = "pasteleria";
@@ -88,7 +88,7 @@ public class ProductoTest {
 		String cat = "pasteleria";
 		Condicion categoria = new CondicionTieneCategoria(cat);
 		
-		ProdAbstracto copia = p1.copiar(categoria);
+		ElementoBazar copia = p1.copiar(categoria);
 		
 		assertNotNull(copia);
 

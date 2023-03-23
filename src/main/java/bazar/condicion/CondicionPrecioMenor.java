@@ -1,6 +1,6 @@
 package bazar.condicion;
 
-import bazar.modelo.ProdAbstracto;
+import bazar.modelo.ElementoBazar;
 
 public class CondicionPrecioMenor implements Condicion {
 	private double precioMaximo;
@@ -10,7 +10,7 @@ public class CondicionPrecioMenor implements Condicion {
 	}
 
 	@Override
-	public boolean cumple(ProdAbstracto elemento) {
+	public boolean cumple(ElementoBazar elemento) {
 
 		return elemento.getPrecio() < precioMaximo;
 	}

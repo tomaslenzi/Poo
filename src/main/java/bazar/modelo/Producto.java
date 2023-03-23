@@ -6,7 +6,7 @@ import java.util.Set;
 
 import bazar.condicion.Condicion;
 
-public class Producto extends ProdAbstracto {
+public class Producto extends ElementoBazar {
 
 	private Set<String> categorias;
 	private double precio;
@@ -45,8 +45,8 @@ public class Producto extends ProdAbstracto {
 	}
 
 	@Override
-	public ArrayList<ProdAbstracto> buscar(Condicion f) {
-		ArrayList<ProdAbstracto> resultado = new ArrayList<>();
+	public ArrayList<ElementoBazar> buscar(Condicion f) {
+		ArrayList<ElementoBazar> resultado = new ArrayList<>();
 
 		if (f.cumple(this))
 			resultado.add(this);
@@ -54,7 +54,7 @@ public class Producto extends ProdAbstracto {
 	}
 
 	@Override
-	public ProdAbstracto copiar(Condicion f) {
+	public ElementoBazar copiar(Condicion f) {
 		if (f.cumple(this)) {
 			Producto copia = new Producto(this.getNombre(), this.precio, this.peso);
 			for (String cat : categorias)
@@ -69,5 +69,12 @@ public class Producto extends ProdAbstracto {
 	public Producto productoMenorPeso() {
 		return this;
 	}
+
+	@Override
+	public String toString() {
+		return "Producto [categorias=" + categorias + ", precio=" + precio + ", peso=" + peso + "]";
+	}
+	
+	
 
 }

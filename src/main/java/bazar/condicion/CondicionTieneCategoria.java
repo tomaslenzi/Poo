@@ -1,6 +1,6 @@
 package bazar.condicion;
 
-import bazar.modelo.ProdAbstracto;
+import bazar.modelo.ElementoBazar;
 
 public class CondicionTieneCategoria implements Condicion {
 	private String cat;
@@ -10,7 +10,7 @@ public class CondicionTieneCategoria implements Condicion {
 	}
 
 	@Override
-	public boolean cumple(ProdAbstracto elemento) {
+	public boolean cumple(ElementoBazar elemento) {
 		return elemento.tieneCategoria(cat);
 	}
 

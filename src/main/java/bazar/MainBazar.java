@@ -26,9 +26,9 @@ public class MainBazar {
 		
 		Condicion pesoMenor = new CondicionPesoMenor(1000);
 		
-		Combo c1 = new Combo("picos de decoracion",10,50,pesoMenor);
+		Combo c1 = new Combo("picos de decoracion",0.1,50,pesoMenor);
 		
-		Combo c2 = new Combo("combo decoracion basico", 10, 50, pesoMenor);
+		Combo c2 = new Combo("combo decoracion basico", 0.1, 50, pesoMenor);
 		
 		c1.agregarElemento(p1);
 		c1.agregarElemento(p2);

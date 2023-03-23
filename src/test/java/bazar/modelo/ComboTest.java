@@ -113,7 +113,7 @@ public class ComboTest {
 		combo.agregarElemento(p2);
 
 		// se copia el combo
-		ProdAbstracto comboCopia = combo.copiar(precioMenor);
+		ElementoBazar comboCopia = combo.copiar(precioMenor);
 		assertNotSame(combo, comboCopia);
 
 
@@ -129,7 +129,7 @@ public class ComboTest {
 		combo.agregarElemento(p1);
 		combo.agregarElemento(p2);
 
-		ProdAbstracto resultado = combo.productoMenorPeso();
+		ElementoBazar resultado = combo.productoMenorPeso();
 		assertEquals(p1, resultado);
 	}
 
